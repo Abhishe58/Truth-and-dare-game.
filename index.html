@@ -1,0 +1,200 @@
+<html>
+  <head>
+    <title></title>
+  </head>
+  <body>
+    <div class="container">
+      <p>Truth or Dare</p>
+      <div class="box">
+      <button class="truthbtu" onclick="a()">Truth </button>
+      <button class="darebtu" onclick="b()">Dare </button>
+      </div>
+      <p class="text"></p>
+      <div class="timer">
+          
+      </div>
+      <p class="timernumber">10</p>
+    </div>
+  </body>
+</html>
+<style>
+  *
+  {
+    margin: 0;
+    padding: 0;
+    font-family: Monospace;
+  }
+  body
+  {
+    display: flex ;
+    align-items: center ;
+    justify-content: center ;
+  }
+  .container
+  {
+    background-color: #272727;
+    height: 550px;
+    width: 100%;
+    gap: 30px;
+    display: flex ;
+    align-items: center ;
+    justify-content: center ;
+    flex-direction: column;
+  }
+  p
+  {
+    font-size: 20px;
+    color: #fff;
+    
+  }
+  .box
+  {
+    display: flex ;
+    align-items: center ;
+    justify-content: center ;
+    background-color: ;
+    gap: 50px;
+  }
+  .truthbtu
+  {
+    padding: 10px;
+    display: flex ;
+    align-items: center ;
+    justify-content: center ;
+    border: 1px solid white;
+    background-color: transparent;
+    font-size: 20px;
+    color: white;
+    font-weight: 600;
+    transition: 1s;
+  }
+  #truthbtu:focus 
+  {
+    border: 1px solid yellow ;
+    color: yellow ;
+  }
+    .darebtu
+  {
+    padding: 10px;
+    display: block ;
+    
+    border: 1px solid white;
+  background-color: transparent;
+    font-size: 20px;
+    color: white;
+    font-weight: 600;
+    transition: 1s;
+  }
+  .darebtu:focus 
+  {
+    border: 1px solid yellow;
+    color: yellow;
+  } 
+  .timer
+  {
+      height: 5px;
+      width: 0px;
+      background: yellow;
+      
+  }
+  .animatetimer
+  {
+      width: 0;
+      animation: timer 10s linear;
+  }
+  @keyframes timer {
+      from {
+          width: 0%;
+      }
+      to{
+          width: 290px;
+      }
+  }
+  .timernumber
+  {
+      display: none;
+  }
+</style>
+<script>
+  var truthbtu = document.querySelector('.truthbtu');
+  var darebtu = document.querySelector('.darebtu');
+   var truth = [
+     "What is your GF or BF name",
+     "What is your Crush name",
+     "Have you do kiss your Bf",
+     ];
+     var dare = [
+     "Make a Tea for me",
+     "Write my name 10 times",
+     "Go and switch on the fan",
+     ];
+     function a(){
+     
+       var truthvalue = truth[Math.floor(Math.random() *  truth.length)];
+       var text = document.querySelector('.text').innerHTML = truthvalue;
+       
+       setTimeout(() => {
+            var text = document.querySelector('.text').innerHTML = "timeout";
+        }, 10000);
+        
+        setTimeout(() => {
+            var darebtu = document.querySelector('.darebtu').style.display="none";
+        }, 1);
+        
+        setTimeout(() => {
+            var timernumber = document.querySelector('.timernumber').style.display="block";
+        }, 1);
+        
+       
+       /* var x = 10;
+        var myInterval = setInterval(function() {
+         // adds 10 to x
+         x -= 1;
+         document.querySelector('.timernumber').innerHTML = x;
+      }, 999);
+        
+        setTimeout(() => {
+var timernumber = document.querySelector('.timernumber').style.display="none";
+           }, 10000); */
+        
+        setTimeout(() => {
+            var darebtu = document.querySelector('.darebtu').style.display="block";
+        }, 10000);
+        
+       timer = document.querySelector('.timer');
+        timer.classList.add('animatetimer');
+        setTimeout(() => {
+            timer.classList.remove('animatetimer')
+        }, 10000);
+       }
+      
+      
+      
+       function b(){
+       var darevalue = dare[Math.floor(Math.random() *  dare.length)];
+       var text = document.querySelector('.text').innerHTML = darevalue;
+       
+       setTimeout(() => {
+            var text = document.querySelector('.text').innerHTML = "timeout";
+        }, 10000);
+        
+        setTimeout(() => {
+            var truthbtu = document.querySelector('.truthbtu').style.display="none";
+        }, 1);
+        setTimeout(() => {
+            var truthbtu = document.querySelector('.truthbtu').style.display="block";
+        }, 10000);
+        
+       timer = document.querySelector('.timer');
+       
+      setTimeout(() => {
+            var timernumber = document.querySelector('.timernumber').style.display="block";
+        }, 1);
+        timer.classList.add('animatetimer');
+        setTimeout(() => {
+            timer.classList.remove('animatetimer')
+        }, 10000);
+       }
+       
+       
+</script>
