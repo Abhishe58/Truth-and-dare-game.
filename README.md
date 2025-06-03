@@ -4,7 +4,7 @@ This game is only for fun don't take seriously
 A fun and interactive Truth and Dare web game built with HTML, CSS, and JavaScript. The game randomly selects a truth or dare question and includes a countdown timer to keep the excitement going!
 
 🚀 Live Demo
-Click here to play the game! (Replace with your live link if deployed)
+https://abhishe58.github.io/Truth-and-dare-game./
 
 🕹️ Features
 🎯 Random Truth or Dare question every time
